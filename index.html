@@ -4,116 +4,184 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Apparels by Amani • Life Styled</title>
+    <meta name="description" content="Official website for Apparels by Amani — Life Styled. Athleisure and fashion in Nairobi with countrywide delivery." />
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <!-- HERO (full screen, prices NOT visible yet) -->
-    <section class="hero" id="home">
-      <div class="hero-bg" aria-hidden="true"></div>
+    <!-- HERO: ONLY image + logo + slogan (forces scroll) -->
+    <section class="hero" id="home" aria-label="Hero">
+      <div class="hero-bg" role="img" aria-label="Athleisure product background"></div>
       <div class="hero-overlay" aria-hidden="true"></div>
 
-      <header class="hero-header">
-        <img class="hero-logo" src="logo.png" alt="Apparels by Amani logo" />
+      <header class="hero-top">
+        <img src="logo.png" alt="Apparels by Amani logo" class="brand-logo" />
       </header>
 
-      <div class="hero-content">
+      <div class="hero-text">
         <p class="hero-kicker">Athleisure • Fashion • Everyday fits</p>
         <h1 class="hero-slogan">Life Styled</h1>
         <p class="hero-sub">
-          Premium-inspired sets, jumpsuits, and jerseys — Nairobi CBD pickup + countrywide delivery.
+          Nairobi • CBD pickup available • Countrywide next-day delivery
         </p>
 
-        <div class="hero-scroll">
-          <span>Scroll to explore</span>
-          <span class="arrow">↓</span>
+        <div class="hero-scroll" aria-label="Scroll cue">
+          <span>Scroll</span>
+          <span class="arrow" aria-hidden="true">↓</span>
         </div>
       </div>
     </section>
 
-    <!-- EVERYTHING BELOW = after scroll -->
+    <!-- CONTENT (after scroll) -->
     <main>
-      <section class="section" id="about">
+      <section class="section intro" id="about">
         <div class="container">
           <h2>Curated fashion + athleisure that stays stylish.</h2>
           <p>
-            Apparels by Amani brings clean fits, gym sets, and statement pieces that look expensive
-            without doing too much.
+            Apparels by Amani brings clean fits and premium-inspired sets that look expensive without doing too much.
+            Order via Instagram or WhatsApp. Working hours Mon–Fri, 8am–5pm.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn primary" href="https://instagram.com/apparelsbyamani" target="_blank" rel="noreferrer">
+              Shop on Instagram
+            </a>
+            <button class="btn" id="whatsappBtn" type="button">
+              Order on WhatsApp
+            </button>
+          </div>
+
+          <p class="small-muted">
+            Phone: <a href="tel:+254768043466">0768 043 466</a>
           </p>
         </div>
       </section>
 
       <section class="section" id="products">
         <div class="container">
-          <h2>Products</h2>
+          <div class="section-head">
+            <h2>Products & Prices</h2>
+            <p class="muted">Thumbnails/photos will be added after the layout + colors are finalized.</p>
+          </div>
 
-          <div class="grid">
+          <div class="cards">
             <article class="card">
               <h3>Jumpsuits</h3>
-              <p>Colors: black, brown, light grey, maroon</p>
-              <p class="price">KES 1,300 <span class="muted">(from 1,500)</span></p>
+              <p class="muted">Colors: black, brown, light grey, maroon</p>
+              <p class="price">
+                <span class="now">KES 1,300</span>
+                <span class="was">from 1,500</span>
+              </p>
+              <p class="note">Same-day available for serious buyers only (confirmed payment).</p>
             </article>
 
             <article class="card">
               <h3>Jerseys</h3>
-              <p>Fan version: <strong>KES 1,000</strong></p>
-              <p>Player version: <strong>KES 1,500</strong></p>
+              <ul class="list">
+                <li><span>Fan version</span><strong>KES 1,000</strong></li>
+                <li><span>Player version</span><strong>KES 1,500</strong></li>
+              </ul>
             </article>
 
             <article class="card">
               <h3>Lululemon-inspired set</h3>
-              <p>Full set: jacket + pants</p>
-              <p class="price">KES 5,000</p>
+              <p class="muted">Full set: jacket + pants</p>
+              <p class="price"><span class="now">KES 5,000</span></p>
             </article>
           </div>
-
-          <p class="muted note">
-            Thumbnails/photos will be added after the layout + colors are finalized.
-          </p>
         </div>
       </section>
 
       <section class="section" id="delivery">
         <div class="container">
           <h2>Delivery & Pickup</h2>
-          <ul class="list">
-            <li><strong>Location:</strong> Nairobi</li>
-            <li><strong>Pickup:</strong> CBD pickup available</li>
-            <li><strong>Standard delivery:</strong> Countrywide, next-day delivery/pickup</li>
-            <li><strong>Same-day delivery:</strong> serious buyers only (confirmed payment)</li>
-            <li><strong>Payment:</strong> payment on delivery (standard orders)</li>
-          </ul>
+
+          <div class="two-col">
+            <div class="panel">
+              <h3>Location</h3>
+              <ul class="bullets">
+                <li><strong>Nairobi</strong></li>
+                <li>CBD pickup available</li>
+                <li>Working hours: Mon–Fri, 8am–5pm</li>
+              </ul>
+            </div>
+
+            <div class="panel">
+              <h3>Delivery</h3>
+              <ul class="bullets">
+                <li><strong>Countrywide delivery:</strong> next-day (standard)</li>
+                <li><strong>Same-day:</strong> serious buyers only (confirmed payment)</li>
+                <li><strong>Standard:</strong> payment on delivery</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="small-muted">
+            If you need same-day, please be ready to confirm payment and delivery cost.
+          </p>
         </div>
       </section>
 
       <section class="section" id="policy">
         <div class="container">
           <h2>Policies</h2>
-          <ul class="list">
-            <li><strong>No returns / no exchanges.</strong></li>
-            <li>Please confirm size/color before we dispatch.</li>
-            <li>Same-day requests require confirmed payment.</li>
-          </ul>
+
+          <div class="policy-grid">
+            <div class="policy-item">
+              <h3>No returns / No exchanges</h3>
+              <p class="muted">
+                Please confirm size, color, and details before we dispatch. Once dispatched, we do not accept returns or exchanges.
+              </p>
+            </div>
+
+            <div class="policy-item">
+              <h3>Same-day orders</h3>
+              <p class="muted">
+                Same-day delivery is for serious buyers only and requires confirmed payment before dispatch.
+              </p>
+            </div>
+
+            <div class="policy-item">
+              <h3>Pickup</h3>
+              <p class="muted">
+                CBD pickup available. We’ll share pickup details after your order is confirmed.
+              </p>
+            </div>
+
+            <div class="policy-item">
+              <h3>Payment</h3>
+              <p class="muted">
+                Standard orders: payment on delivery. Same-day: confirmed payment.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="section" id="contact">
+      <section class="section contact" id="contact">
         <div class="container">
           <h2>Contact</h2>
-          <p><strong>Phone:</strong> 0768 043 466</p>
-          <p><strong>Instagram:</strong> @apparelsbyamani</p>
-          <p><strong>Working hours:</strong> Monday–Friday, 8am–5pm</p>
 
-          <div class="buttons">
-            <a class="btn primary" href="https://instagram.com/apparelsbyamani" target="_blank" rel="noreferrer">
-              Shop on Instagram
-            </a>
+          <div class="contact-box">
+            <div>
+              <p><strong>Instagram:</strong> <a href="https://instagram.com/apparelsbyamani" target="_blank" rel="noreferrer">@apparelsbyamani</a></p>
+              <p><strong>Phone:</strong> <a href="tel:+254768043466">0768 043 466</a></p>
+              <p><strong>Hours:</strong> Monday–Friday, 8am–5pm</p>
+            </div>
 
-            <!-- We’ll wire WhatsApp properly in the JS step (later) -->
-            <a class="btn" href="#contact">
-              Order on WhatsApp (next step)
-            </a>
+            <div class="contact-actions">
+              <a class="btn primary" href="https://instagram.com/apparelsbyamani" target="_blank" rel="noreferrer">
+                DM on Instagram
+              </a>
+              <button class="btn" id="whatsappBtn2" type="button">
+                WhatsApp Order
+              </button>
+            </div>
           </div>
+
+          <footer class="footer">
+            <p class="muted">© <span id="year"></span> Apparels by Amani • Life Styled</p>
+          </footer>
         </div>
       </section>
     </main>

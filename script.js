@@ -16,7 +16,7 @@ function openWhatsApp() {
     "Thank you!"
   ].join("\n");
 
-  const url = https://wa.me/${phone}?text=${encodeURIComponent(message)};
+  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
   window.open(url, "_blank", "noopener,noreferrer");
 }
 

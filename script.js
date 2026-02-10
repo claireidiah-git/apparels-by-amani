@@ -1,32 +1,30 @@
-// Apparels by Amani - simple helper JS (safe for GitHub Pages)
-
-function openWhatsApp() {
-  // WhatsApp uses country code without +
-  const phone = "254768043466";
-
-  const message = [
-    "Hi Apparels by Amani 👋",
-    "I want to order:",
-    "",
-    "• Product:",
-    "• Size:",
-    "• Color:",
-    "• Delivery or CBD pickup:",
-    "",
-    "Thank you!"
-  ].join("\n");
-
-  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-  window.open(url, "_blank", "noopener,noreferrer");
-}
+// Apparels by Amani – minimal interactions
+// WhatsApp-only ordering
 
 document.addEventListener("DOMContentLoaded", () => {
-  const btn1 = document.getElementById("whatsappBtn");
-  const btn2 = document.getElementById("whatsappBtn2");
+  // Smooth scroll for internal links
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    });
+  });
 
-  if (btn1) btn1.addEventListener("click", openWhatsApp);
-  if (btn2) btn2.addEventListener("click", openWhatsApp);
-
-  const year = document.getElementById("year");
-  if (year) year.textContent = new Date().getFullYear();
+  // WhatsApp order button
+  const whatsappBtn = document.querySelector(".whatsapp-btn");
+  if (whatsappBtn) {
+    whatsappBtn.addEventListener("click", () => {
+      const phone = "254768043466";
+      const message = encodeURIComponent(
+        "Hi Apparels by Amani 👋 I’d like to place an order."
+      );
+      window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+    });
+  }
 });

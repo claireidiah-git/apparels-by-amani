@@ -1,30 +1,32 @@
-// Apparels by Amani – minimal interactions
-// WhatsApp-only ordering
+document.addEventListener("DOMContentLoaded", function () {
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Smooth scroll for internal links
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener("click", e => {
-      e.preventDefault();
-      const target = document.querySelector(link.getAttribute("href"));
-      if (target) {
-        target.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-      }
-    });
-  });
+const toggle = document.querySelector(".nav-toggle");
+const navLinks = document.querySelector(".nav-links");
 
-  // WhatsApp order button
-  const whatsappBtn = document.querySelector(".whatsapp-btn");
-  if (whatsappBtn) {
-    whatsappBtn.addEventListener("click", () => {
-      const phone = "254768043466";
-      const message = encodeURIComponent(
-        "Hi Apparels by Amani 👋 I’d like to place an order."
-      );
-      window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
-    });
-  }
+if (toggle && navLinks) {
+toggle.addEventListener("click", function () {
+navLinks.classList.toggle("active");
+const isOpen = navLinks.classList.contains("active");
+toggle.setAttribute("aria-expanded", isOpen);
+});
+}
+
+const yearEl = document.getElementById("year");
+if (yearEl) {
+yearEl.textContent = new Date().getFullYear();
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+link.addEventListener("click", function (e) {
+const targetId = this.getAttribute("href");
+if (targetId.length > 1) {
+e.preventDefault();
+const target = document.querySelector(targetId);
+if (target) {
+target.scrollIntoView({ behavior: "smooth" });
+}
+}
+});
+});
+
 });
